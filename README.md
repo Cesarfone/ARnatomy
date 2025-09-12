@@ -1,4 +1,4 @@
-# Título do projeto
+# Realidade Aumentada para o estudo da Anatomia
 
 Um parágrafo da descrição do projeto vai aqui
 
