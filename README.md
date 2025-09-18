@@ -1,6 +1,6 @@
 # Realidade Aumentada para o estudo da Anatomia (ARnatomy)
 
-Um parágrafo da descrição do projeto vai aqui
+O ARnatomy é um aplicativo educacional em Realidade Aumentada (RA) que auxilia estudantes no aprendizado anatômico, permitindo visualizar modelos 3D em escala real, manipular estruturas (rotacionar, ampliar e explorar perspectivas), pesquisar nomenclaturas técnicas, criar e interagir com flashcards gamificados e acompanhar o progresso individual, democratizando o acesso ao estudo e contribuindo para superar limitações do ensino tradicional.
 
 ## 🚀 Começando
 
