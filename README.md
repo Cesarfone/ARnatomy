@@ -1,4 +1,4 @@
-# Realidade Aumentada para o estudo da Anatomia
+# Realidade Aumentada para o estudo da Anatomia (ARnatomy)
 
 Um parágrafo da descrição do projeto vai aqui
 
