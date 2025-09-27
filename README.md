@@ -4,8 +4,8 @@ O ARnatomy é um aplicativo educacional em Realidade Aumentada (RA) que auxilia 
 
 ## 🚀 Começando
 
-Este repositório é o espaço oficial do projeto **ARnatomy**.  
-Atualmente ele contém **documentação, wireframes e mockups**.  
+Este repositório é o espaço oficial do projeto ARnatomy.  
+Atualmente ele contém documentação, wireframes e mockups.  
 O código-fonte do aplicativo será desenvolvido nas próximas etapas e também publicado aqui.
 
 ### 📋 Pré-requisitos
