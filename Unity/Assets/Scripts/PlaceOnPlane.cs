@@ -6,9 +6,11 @@ using System.Collections.Generic;
 [RequireComponent(typeof(ARRaycastManager))]
 public class PlaceOnPlane : MonoBehaviour
 {
-    public GameObject modelPrefab;          // O modelo 3D a ser instanciado
+    public GameObject modelPrefab;         
     private ARRaycastManager raycastManager;
     private GameObject spawnedObject;
+    public ConfirmSpawnUI confirmUI;
+
 
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
@@ -18,20 +20,38 @@ public class PlaceOnPlane : MonoBehaviour
     }
 
     void Update()
+{
+
+    if (Input.touchCount == 0)
+        return;
+
+    Touch touch = Input.GetTouch(0);
+
+    // Faz o Raycast para detectar o plano tocado.
+    if (raycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
     {
-        if (Input.touchCount == 0)
-            return;
+        // Pega a posição onde o toque acertou o plano.
+        var hitPose = hits[0].pose;
 
-        Touch touch = Input.GetTouch(0);
-
-        if (raycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
+        confirmUI.Show(result =>
         {
-            var hitPose = hits[0].pose;
-
-            if (spawnedObject == null)
-                spawnedObject = Instantiate(modelPrefab, hitPose.position, hitPose.rotation);
-            else
-                spawnedObject.transform.position = hitPose.position;
-        }
+            if (result) 
+            {
+                if (spawnedObject == null)
+                {
+                    spawnedObject = Instantiate(modelPrefab, hitPose.position, hitPose.rotation);
+              spawnedObject.transform.localScale = Vector3.one * 0.01f;
+                    spawnedObject.transform.rotation = Quaternion.Euler(0, 180, 0) * spawnedObject.transform.rotation;
+                }
+                else
+                {
+                    spawnedObject.transform.position = hitPose.position;
+                }
+            }
+        });
     }
 }
+
+}
+
+
